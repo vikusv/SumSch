@@ -3,26 +3,26 @@
 
 int main(void)
 {
-    double a = 0, b = 0, c = 0, D = 0, x1 = 0, x2 = 0, x = 0;
-    int n = 0, res = 0;
+    double a = 0, b = 0, c = 0, D = 0, x1 = 0, x2 = 0;
+    int nRoots = 0, inputStatus = 0;
 
     do
     {
         printf("Введите через пробел коэффициенты квадратного уравнения. Чтобы закончить, введите q.\n");
-        res = input(&a, &b, &c);
+        inputStatus = InputCoeff(&a, &b, &c);
 
-        while (res == Repeat)
+        while (inputStatus == Repeat)
         {
             printf("Принимаются только числовые значения.\n");
-            res = input(&a, &b, &c);
+            inputStatus = InputCoeff(&a, &b, &c);
         }
 
-        if (res == Success)
+        if (inputStatus == Success)
         {
-            n = QuadEq(a, b, c, &x1, &x2);
-            OutputRoots(x1, x2, n);
+            nRoots = QuadEq(a, b, c, &x1, &x2);
+            OutputRoots(x1, x2, nRoots);
         }
-    } while (res != Exit);
+    } while (inputStatus != Exit);
     
     return 0;
 }

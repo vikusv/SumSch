@@ -10,14 +10,23 @@ const double DELTA = 1E-6;
  * @brief Очистка буфера
  * 
  */
-void Clean(void);
+void CleanInput();
 
 /**
- * @brief Проверка аргументов на равенство нулю
+ * @brief Проверка аргументов на равенство
  * 
- * @param num аргумент
+ * @param a 
+ * @param b
  * @return int 
  */
-int check(double num);
+int IsEqual(double a, double b);
+
+/**
+ * @brief Проверка аргумента на равенство нулю
+ * 
+ * @param num 
+ * @return int 
+ */
+int IsZero(double num);
 
 #endif // COMMON_H

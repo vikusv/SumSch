@@ -55,7 +55,7 @@ int LinEq(double b, double c, double* x1);
  * @param c свободный член
  * @return int 
  */
-int input(double* a, double* b, double* c);
+int InputCoeff(double* a, double* b, double* c);
 
 /**
  * @brief Вывод корней квадратного уравнения

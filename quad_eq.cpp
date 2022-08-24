@@ -8,15 +8,15 @@ int QuadEq(double a, double b, double c, double* x1, double* x2)
     assert(c != NAN);
     assert(x1 != x2);
 
-    if (check(a))
+    if (IsZero(a))
     {
         return LinEq(b, c, x1);
     }
     else
     {
-        if (check(c))
+        if (IsZero(c))
         {
-            if (check(b))
+            if (IsZero(b))
             {
                 x1 = 0;
                 return OneRootQuadEq;
@@ -31,7 +31,7 @@ int QuadEq(double a, double b, double c, double* x1, double* x2)
         else
         {
             double D = b * b - 4 * a * c;
-            if (check(D))
+            if (IsZero(D))
             {
                 *x1 = -b / (2 * a);
                 return OneRootQuadEq;
@@ -58,25 +58,25 @@ int LinEq(double b, double c, double* x1)
     assert (b != NAN);
     assert (c != NAN);
 
-    if (!check(c) && !check(b))
+    if (!IsZero(c) && !IsZero(b))
     {
         *x1 = -c/b;
         return OneRootLinEq;
     }
-    else if (check(c) && !check(b))
+    else if (IsZero(c) && !IsZero(b))
     {
         *x1 = 0;
         return OneRootLinEq;
     }
-    else if (!check(c) && check(b))
+    else if (!IsZero(c) && IsZero(b))
         return NoRootsLinEq;
-    else if (check(c) && check(b))
+    else if (IsZero(c) && IsZero(b))
         return InfRoots;
 
     return Undefined;
 }
 
-int input(double* a, double* b, double* c)
+int InputCoeff(double* a, double* b, double* c)
 {
     int count = 0, res = 0;
     char ch = 0;
@@ -91,7 +91,7 @@ int input(double* a, double* b, double* c)
         }
         else 
         {
-            while (getchar() != '\n');
+            CleanInput();
             res = Repeat;
         }
     }

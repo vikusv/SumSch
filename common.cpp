@@ -1,14 +1,16 @@
 #include "common.h"
 
-int check(double num)
+inline int IsEqual(double a, double b)
 {
-    int sol = 0;
-    sol = (fabs(num) < DELTA);
-
-    return sol; 
+    return (fabs(a - b) < DELTA); 
 }
 
-void Clean(void)
+inline int IsZero(double num)
+{
+    return IsEqual(num, 0);
+}
+
+void CleanInput()
 {
     while (getchar() != '\n');
 }
