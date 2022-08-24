@@ -132,9 +132,10 @@ int QuadEq(double a, double b, double c, double* x1, double* x2, double* x)
         D = b*b - 4*a*c;
         if (D > 0)
         {
+            /* sqrt */ D = sqrt(D);
             n = 2;
-            *x1 = (-b + sqrt(D))/(2*a);
-            *x2 = (-b - sqrt(D))/(2*a);
+            *x1 = (-b + D)/(2*a);
+            *x2 = (-b - D)/(2*a);
         }
         else if (check(D))
         {
