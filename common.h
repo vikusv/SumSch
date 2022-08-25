@@ -17,7 +17,7 @@ void CleanInput();
  * 
  * @param a 
  * @param b
- * @return int 
+ * @return 1 - если аргументы равны, 0 - не равны
  */
 int IsEqual(double a, double b);
 
@@ -25,7 +25,7 @@ int IsEqual(double a, double b);
  * @brief Проверка аргумента на равенство нулю
  * 
  * @param num 
- * @return int 
+ * @return 1 - если аргументр равен нувлю, 0 - не равен
  */
 int IsZero(double num);
 

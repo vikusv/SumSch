@@ -30,19 +30,19 @@ enum RootStatus
  * @param a старший коэффициент
  * @param b второй коэффициент
  * @param c свободный член
- * @param x1 первый (или единственный) уравнения 
+ * @param x1 первый (или единственный) корень уравнения 
  * @param x2 второй корень уравнения
- * @return int 
+ * @return параметр, описывающий количество корней и тип уравнения
  */
 int QuadEq(double a, double b, double c, double* x1, double* x2);
 
 /**
- * @brief Решение линейныйх уравнений вида bx+c=0
+ * @brief Решение линейных уравнений вида bx+c=0
  * 
  * @param b коэффициент при неизвестной
  * @param c свободный член
  * @param x1 корень уравнения
- * @return int 
+ * @return параметр, описывающий количество корней и тип уравнения
  */
 int LinEq(double b, double c, double* x1);
 
@@ -53,14 +53,24 @@ int LinEq(double b, double c, double* x1);
  * @param a старший коэффициент
  * @param b второй коэффициент
  * @param c свободный член
- * @return int 
+ * @return количество верно введенных коэффициентов
  */
 int InputCoeff(double* a, double* b, double* c);
 
 /**
  * @brief Вывод корней квадратного уравнения
  * 
+ * @param x1 первый (или единственный) корень уравнения 
+ * @param x2 второй корень уравнения
  */
 void OutputRoots(double x1, double x2, int nRoots);
+
+/**
+ * @brief Сортировка корней уравнения по возрастанию
+ * 
+ * @param x1 первый (или единственный) корень уравнения 
+ * @param x2 второй корень уравнения
+ */
+void RootsSwap(double* x1, double* x2);
 
 #endif // QUAD_EQ_H
