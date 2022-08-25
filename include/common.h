@@ -4,10 +4,11 @@
 #include <stdio.h>
 #include <math.h>
 
+
 const double DELTA = 1E-6;
 
 /**
- * @brief Очистка буфера
+ * @brief Очистка буфера ввода
  * 
  */
 void CleanInput();

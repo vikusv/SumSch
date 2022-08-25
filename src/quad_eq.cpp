@@ -7,6 +7,8 @@ int QuadEq(double a, double b, double c, double* x1, double* x2)
     assert(b  != NAN);
     assert(c  != NAN);
     assert(x1 != x2);
+    assert(x1 != NULL);
+    assert(x2 != NULL);
 
     double x = 0;
     if (IsZero(a))
@@ -58,8 +60,9 @@ int QuadEq(double a, double b, double c, double* x1, double* x2)
 
 int LinEq(double b, double c, double* x1)
 {
-    assert (b != NAN);
-    assert (c != NAN);
+    assert (b  != NAN);
+    assert (c  != NAN);
+    assert (x1 != NULL);
 
     if (!IsZero(c) && !IsZero(b))
     {
@@ -81,6 +84,10 @@ int LinEq(double b, double c, double* x1)
 
 int InputCoeff(double* a, double* b, double* c)
 {
+    assert(a != NULL);
+    assert(b != NULL);
+    assert(c != NULL);
+
     int count = 0, res = 0;
     char ch = 0;
 
@@ -128,6 +135,9 @@ void OutputRoots(const double x1, const double x2, const int nRoots)
 
 void RootsSwap(double* x1, double* x2)
 {
+    assert(x1 != NULL);
+    assert(x2 != NULL);
+
     double x = 0;
     if (*x1 > *x2)
     {

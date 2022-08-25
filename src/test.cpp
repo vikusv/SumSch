@@ -1,14 +1,7 @@
 #include <stdio.h>
 #include "quad_eq.h"
 #include "common.h"
-
-struct Output {
-        double a, b, c;
-        int nRoots;
-        double x1, x2;
-    };
-
-int TestNumEq(Output testValues, int testNum);
+#include "test_quad_eq.h"
 
 int main(void)
 {
@@ -32,21 +25,3 @@ int main(void)
 
     return 0;
 }
-
-int TestNumEq(Output testValues, int testNum)
-{
-    double x1 = 0, x2 = 0;
-    int nRoots = QuadEq(testValues.a, testValues.b, testValues.c, &x1, &x2);
-    if (!(nRoots == testValues.nRoots) && !IsEqual(x1, testValues.x1) && !IsEqual(x1, testValues.x1)) 
-    {
-        printf("Ошибка в тесте %d (a = %lg, b = %lg, c = %lg).\n"
-               "Полученные значения: nRoots = %d, x1 = %lg, x2 = %lg.\n"
-               "Ожидаемые значения: nRoots = %d, x1 = %lg, x2 = %lg.\n", 
-               (testNum + 1), testValues.a, testValues.b, testValues.c, nRoots, x1, x2, testValues.nRoots, testValues.x1, testValues.x2);
-
-               return 1;
-    }
-
-    return 0;
-}
-
