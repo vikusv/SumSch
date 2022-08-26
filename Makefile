@@ -10,6 +10,9 @@ all: main
 run: main 
 	 @$(BUILD_DIR)/main.elf
 
+runtest: test 
+	 @$(BUILD_DIR)/test.elf
+
 test: $(BUILD_DIR)/test.elf
 
 main: $(BUILD_DIR)/main.elf
