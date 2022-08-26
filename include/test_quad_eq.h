@@ -22,12 +22,5 @@ struct Output {
  */
 int TestNumEq(Output testValues, int testNum);
 
-/**
- * @brief Массив соответствия количества корней и их строкового представления 
- * 
- */
-static const char *IntToNum[] = {
-    "0", "0", "1", "1", "2", "INF"
-};
 
 #endif // TEST_QUAD_EQ

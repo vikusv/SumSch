@@ -10,7 +10,6 @@ int QuadEq(double a, double b, double c, double* x1, double* x2)
     assert(x1 != NULL);
     assert(x2 != NULL);
 
-    double x = 0;
     if (IsZero(a))
     {
         return LinEq(b, c, x1);

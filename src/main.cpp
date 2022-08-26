@@ -3,7 +3,7 @@
 
 int main(void)
 {
-    double a = 0, b = 0, c = 0, D = 0, x1 = 0, x2 = 0;
+    double a = 0, b = 0, c = 0, x1 = 0, x2 = 0;
     int nRoots = 0, inputStatus = 0;
 
     do

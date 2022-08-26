@@ -1,2 +1,4 @@
-quad
-test
+*.elf
+*.o
+*.html
+build/*
