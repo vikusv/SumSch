@@ -30,8 +30,8 @@ size_t Strlen(const char *str)
 size_t StrlenAlt(const char *str) 
 {
     const char *step = str;
-    while (*(++step));
-    return (step - str);
+    while (*(step++));
+    return (size_t)(step - str - 1);
 }
 
 char *Strcpy(char *arr, const char *str)
@@ -55,7 +55,7 @@ char *Strncpy(char *arr, const char *str, size_t size)
     return arrstart;
 }
 
-char *Strcat(char *arr, const char *str) //strcat_alt
+char *Strcat(char *arr, const char *str)
 {
     char *arrstart = arr;
     unsigned int count = 0;
@@ -93,4 +93,20 @@ char *Strncat(char *arr, char *str, size_t size)
     arr[count] = '\0';
 
     return arrstart;
+}
+
+const char *Strchr(const char *str, int letter)
+{
+    while (*(str++) != letter);
+    return str - 1;
+}
+
+int Strcmp(const char * str1, const char * str2)
+{
+    while (*(str1++) == *(str2++) && *str1 != '\0');
+    if (*str1 != *str2)
+    {
+        return (*(str1 - 1) - *(str2 - 1));
+    }
+    return 0;
 }
