@@ -1,5 +1,12 @@
 #include "str_func.h"
 
+/**
+ * @brief Функция выводит на экран некоторую строку, после чего переходит на следующую строку. \
+ * Работает с использованием putc().
+ * 
+ * @param str строка, которую необходимо вывести.
+ * @return EOF - в случае ошибки чтения, неотрицательное число в случае успеха.
+ */
 int Puts(const char *str)
 {
     int result = 0;
@@ -20,6 +27,12 @@ int Puts(const char *str)
     return result;  
 }
 
+/**
+ * @brief Функция считает количество символов в строке. Работает с использованием цикла for
+ * 
+ * @param str строка для подсчета символов.
+ * @return количество символов в строке.
+ */
 size_t Strlen(const char *str) 
 {
     size_t count = 0;
@@ -27,6 +40,12 @@ size_t Strlen(const char *str)
     return count;
 }
 
+/**
+ * @brief Функция считает количество символов в строке. Работает с использованием указательной арифметики
+ * 
+ * @param str строка для подсчета символов.
+ * @return количество символов в строке.
+ */
 size_t StrlenAlt(const char *str) 
 {
     const char *step = str;
@@ -67,7 +86,7 @@ char *Strcat(char *arr, const char *str)
     return arrstart;
 }
 
-char *StrcatAlt(char *arr, const char *str) //strcat_alt
+char *StrcatAlt(char *arr, const char *str)
 {
     char *arrstart = arr;
     while (*(arr))
@@ -95,12 +114,27 @@ char *Strncat(char *arr, char *str, size_t size)
     return arrstart;
 }
 
+/**
+ * @brief Функция выводит адрес первого заданного символа в заданной строке
+ * 
+ * @param str строка 
+ * @param letter символ, который необходимо найти
+ * @return адрес найденного символа
+ */
 const char *Strchr(const char *str, int letter)
 {
     while (*(str++) != letter);
     return str - 1;
 }
 
+/**
+ * @brief Функция проверяет строки на идентичность.
+ * 
+ * @param str1 первая строка
+ * @param str2 вторая строка
+ * @return 0 - если строки идентичны, отрицательное число, если первый отличающийся символ первой строки \
+ * имеет меньший код по ASKII, положительное число - больший
+ */
 int Strcmp(const char * str1, const char * str2)
 {
     while (*(str1++) == *(str2++) && *str1 != '\0');
