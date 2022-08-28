@@ -10,7 +10,7 @@ int IsZero(double num)
     return IsEqual(num, 0);
 }
 
-void CleanInput()
+void CleanInput() 
 {
     while (getchar() != '\n');
 }

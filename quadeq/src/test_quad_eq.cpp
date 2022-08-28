@@ -26,7 +26,7 @@ int TestNumEq(Output testValues, int testNum)
                "Ожидаемые значения: nRoots = %s, x1 = %lg, x2 = %lg."
                 WHITE_TEXT, 
                (testNum + 1), testValues.a, testValues.b, testValues.c, IntToNum[nRoots], x1, x2, 
-               IntToNum[testValues.nRoots], testValues.x1, testValues.x2
+               IntToNum[testValues.nRoots], testValues.x1, testValues.x2 //vprintf + va_arg
                );
 
                return 1;

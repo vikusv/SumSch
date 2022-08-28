@@ -5,8 +5,8 @@
 
 int main(void)
 {
-    Output OutputData[] = {
-                      {  1,     2,   3,  NoRootsQuadEq,    0,    0}, 
+    Output TestData[] = {
+                      {  1,     2,   3,  NoRootsQuadEq,    0,    0},  
                       {  0,    -5,  -3,   OneRootLinEq, -0.6,    0},
                       {  6,     0,   0,  OneRootQuadEq,    0,    0}, 
                       {-15,     8,   0, TwoRootsQuadEq,    0, 0.53},
@@ -16,10 +16,10 @@ int main(void)
                       {8.2,   1.9, 2.5,  NoRootsQuadEq,    0,    0},
                      };
     int ErrorTests = 0;
-    int testSum = (int) (sizeof (OutputData) / sizeof (OutputData[0]));
+    int testSum = (int) (sizeof (TestData) / sizeof (TestData[0]));
     for (int testNum = 0; testNum < testSum; testNum++)
     {
-        ErrorTests += TestNumEq(OutputData[testNum], testNum);
+        ErrorTests += TestNumEq(TestData[testNum], testNum);
     }
     printf("Количество тестов с ошибками - %d.\n", ErrorTests);
 

@@ -63,20 +63,30 @@ int LinEq(double b, double c, double* x1)
     assert (c  != NAN);
     assert (x1 != NULL);
 
-    if (!IsZero(c) && !IsZero(b))
+    if (!IsZero(c))
     {
-        *x1 = -c/b;
-        return OneRootLinEq;
+        if (!IsZero(b))
+        {
+            *x1 = -c/b;
+            return OneRootLinEq;
+        }
+        else
+        {
+            return NoRootsLinEq;
+        }
     }
-    else if (IsZero(c) && !IsZero(b))
+    else  
     {
-        *x1 = 0;
-        return OneRootLinEq;
+        if (!IsZero(b))
+        {
+            *x1 = 0;
+            return OneRootLinEq;
+        }
+        else
+        {
+            return InfRoots;
+        }
     }
-    else if (!IsZero(c) && IsZero(b))
-        return NoRootsLinEq;
-    else if (IsZero(c) && IsZero(b))
-        return InfRoots;
 
     return Undefined;
 }
@@ -128,6 +138,7 @@ void OutputRoots(const double x1, const double x2, const int nRoots)
                              break;
         case InfRoots:       printf("Уравнение имеет бесконечное количество корней.\n"); 
                              break;
+        case Undefined:      [[fallthrough]];
         default:             assert(0 && "Нет такого случая.");
     }
 }
